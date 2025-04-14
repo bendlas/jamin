@@ -296,7 +296,11 @@ void set_scene (int scene_num)
         That is, scene_num = -1.  Otherwise we may be in the middle of 
         crossfading to a new state.  */
 
-    if (scene_num >= 0) menu_scene = prev_scene = scene_num;
+    if (scene_num >= 0) {
+      menu_scene = prev_scene = scene_num;
+    } else {
+      return;
+    }
 
 
     /*  Grab the current state.  */
